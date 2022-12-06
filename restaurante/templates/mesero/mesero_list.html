@@ -1,0 +1,31 @@
+{% extends "mesero/base_generic.html" %}
+
+{% block content %}
+    <div><a href="http://unmsm.edu.pe"><strong>U.N.M.S.M</strong></a></div>
+    <p>Lista de meseros en la aplicación</p>
+
+    <div class="card-body">
+        <form action="" method="post"></form>
+
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Procedencia</th>
+                <th scope="col">Edad</th>
+            </thead>
+            <tbody>
+                {% for mesero in data %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td><p>{{ mesero.nombre }}</p></td>
+                        <td><p> {{ mesero.edad }}</p></td>
+                        <td><p>{{ mesero.procedencia }}</p></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

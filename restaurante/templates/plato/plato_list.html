@@ -1,0 +1,31 @@
+{% extends "plato/base_generic.html" %}
+
+{% block content %}
+    <div><a href="http://unmsm.edu.pe"><strong>U.N.M.S.M</strong></a></div>
+    <p>Lista de platos en la aplicación</p>
+
+    <div class="card-body">
+        <form action="" method="post"></form>
+
+        <table class="table table-striped">
+            <thead>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Procedencia</th>
+            </thead>
+            <tbody>
+                {% for plato in data %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td><p>{{ plato.nombre }}</p></td>
+                        <td><p> {{ plato.precio }}</p></td>
+                        <td><p>{{ plato.procedencia }}</p></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
